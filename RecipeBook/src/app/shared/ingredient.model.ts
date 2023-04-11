@@ -11,7 +11,7 @@
 //-------Shorthand---------//
 export class Ingredient{
   constructor(
-    name: string,
-    amount: number
+    public name: string,
+    public amount: number
   ){}
 }
