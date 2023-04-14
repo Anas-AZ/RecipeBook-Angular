@@ -21,7 +21,19 @@ export class ShoppingListService {
   }
 
   addIngredient(ingredient: Ingredient){
-    this.ingredients.push(ingredient);
+
+    const existingIngredientIndex = this.ingredients.findIndex(
+      (i) => i.name === ingredient.name
+    );
+
+    if (existingIngredientIndex !== -1) {
+      // If the ingredient already exists in the array, increase its frequency
+      this.ingredients[existingIngredientIndex].amount += ingredient.amount;
+    } else {
+      // If the ingredient does not exist in the array, add it as a new item
+      this.ingredients.push(ingredient);
+    }
+    
     this.ingredientsChanged.emit(this.ingredients.slice());
   }
 }
