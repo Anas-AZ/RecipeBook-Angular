@@ -13,4 +13,6 @@ export class DropdownDirective {
 
 /*
 This directive is used to dynamically add the bootstrap data-bs-toggle (for learning purposes)
+
+delete this when safe
 */
