@@ -8,6 +8,7 @@ import { Subject } from 'rxjs';
 export class ShoppingListService {
 
   ingredientsChanged = new Subject<Ingredient[]>();
+  startedEditing = new Subject<number>();
 
   private ingredients: Ingredient[] = [
     new Ingredient('Apples', 5),
@@ -19,6 +20,10 @@ export class ShoppingListService {
   getIngredients(){
     return this.ingredients.slice();
     // slice returns copy of array, otherwise the array is returned as reference.
+  }
+
+  getIngredient(index: number){
+    return this.ingredients[index];
   }
 
   addIngredient(ingredient: Ingredient){
@@ -34,7 +39,7 @@ export class ShoppingListService {
       // If the ingredient does not exist in the array, add it as a new item
       this.ingredients.push(ingredient);
     }
-    
+
     this.ingredientsChanged.next(this.ingredients.slice());
   }
 }
