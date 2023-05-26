@@ -22,13 +22,14 @@
           <div class="col-12">
             <div class="form-group">
               <label for="imagePath">Image URL</label>
-              <input type="text" id="imagePath" formControlName="imagePath" class="form-control">
+              <input type="text" id="imagePath" formControlName="imagePath" class="form-control"
+              #imagePath>
             </div>
           </div>
         </div>
         <div class="row mb-3">
           <div class="col-12">
-            <img src="" class="img-fluid" alt="">
+            <img [src]="imagePath.value" class="img-fluid" alt="">
           </div>
         </div>
         <div class="row mb-3">
@@ -52,7 +53,8 @@
                   <input type="number" id="ingredientAmount{{i}}" class="form-control" formControlName="amount">
                 </div>
                 <div class="col-2 mb-2 align-self-end">
-                  <button class="btn btn-danger">X</button>
+                  <button type="button" class="btn btn-danger"
+                  (click)="onDeleteIngredient(i)">X</button>
                 </div>
               </div>
             </div>
