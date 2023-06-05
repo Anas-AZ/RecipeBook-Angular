@@ -1,9 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <div class="alert alert-danger mt-3 text-center small" *ngIf="error">
+      <!-- <div class="alert alert-danger mt-3 text-center small" *ngIf="error">
         {{error}}
-      </div>
+      </div> -->
+      <app-alert [message]="error" *ngIf="error"></app-alert>
     </div>
     <div *ngIf="isLoading" class="col-12 text-center mt-3">
       <app-loading-spinner></app-loading-spinner>
