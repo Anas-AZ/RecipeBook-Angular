@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RecipesRoutingModule } from './recipes/recipes-routing.module';
 
 const routes: Routes = [
   {path: '', redirectTo: '/recipes', pathMatch: 'full'},
+  {path: 'recipes', loadChildren: () => import('./recipes/recipes.module').then((mod) => mod.RecipesModule)}
 ];
 
 @NgModule({
@@ -11,4 +11,5 @@ const routes: Routes = [
 ],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
