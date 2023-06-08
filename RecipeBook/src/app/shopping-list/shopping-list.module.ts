@@ -15,7 +15,7 @@ import { SharedModule } from "../shared/shared.module";
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild([
-      {path: 'shopping-list', component: ShoppingListComponent},
+      {path: '', component: ShoppingListComponent},
     ]),
   ],
   exports:[]
