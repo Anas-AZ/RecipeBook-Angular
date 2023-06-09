@@ -1,4 +1,4 @@
-import { Component, ComponentFactoryResolver, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component,  OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
@@ -85,7 +85,7 @@ export class AuthComponent implements OnInit, OnDestroy {
       this.closeSub.unsubscribe();
       hostViewContainerRef.clear();
     });
-    
+
   }
 
   ngOnDestroy(): void {
